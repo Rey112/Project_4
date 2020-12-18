@@ -195,7 +195,7 @@ switch ($action) {
 
         $params = session_get_cookie_params();
 
-        setcookie($name, '', $expire, $params['path'], params['domain'], $params['secure'], $params['httponly']);
+        setcookie($name, '', $expire, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
         header("Location: .");
         break;
     }
