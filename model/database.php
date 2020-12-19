@@ -3,7 +3,7 @@ class Database {
 
     private static $username = 'bcn3_proj';
     private static $password = 'w9hLvRFP';
-    private static $dsn = 'mysql:host=sql1.njit.edu;dbname=$username';
+    private static $dsn = 'mysql:host=sql1.njit.edu;dbname=bcn3_proj';
     private static $db;
 
     private function __construct() {}
