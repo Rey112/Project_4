@@ -39,7 +39,7 @@ switch ($action) {
                 header("Location: .?action=display_registration");
             } else {
                 $_SESSION['userId'] = $userId;
-                header("Location: .?action=display_questions=$userId");
+                header("Location: index.php?action=display_users");
             }
         }
         break;
@@ -61,16 +61,16 @@ switch ($action) {
         }
         if (empty($firstName)){
             echo 'First name is empty'; }
-            echo "<br>";
+        echo "<br>";
         if (empty($lastName)){
             echo 'Last name is empty'; }
-            echo "<br>";
+        echo "<br>";
         if (empty($birthday)){
             echo 'Birthday is empty'; }
-            echo "<br>";
+        echo "<br>";
         if (empty($email)){
             echo 'Email is empty'; }
-            echo "<br>";
+        echo "<br>";
         if (strpos($email, '@') == false ) {
             echo 'Email must contain an @ character';
             echo "<br>";
@@ -115,7 +115,7 @@ switch ($action) {
             include('error.php');
         } else {
             QuestionDB::create_question($title, $body, $skills, $userId);
-            header("Location: .?action=display_questions=$userId");
+            header("Location: index.php?action=display_users");
         }
 
         break;
@@ -164,7 +164,6 @@ switch ($action) {
         $title = filter_input(INPUT_POST, 'title');
         $body = filter_input(INPUT_POST, 'body');
         $skills = filter_input(INPUT_POST, 'skills');
-
         if ($questionId == NULL || $userId == NULL){
             $error = "All fields are required";
             include('error.php');
@@ -186,7 +185,7 @@ switch ($action) {
         }
         break;
     }
-
+    /*
     case 'view_question': {
         $questionId = filter_input(INPUT_POST, 'questionId');
         $userId = $_SESSION['userId'];
@@ -197,11 +196,10 @@ switch ($action) {
             $questions = get_question($questionId);
             include('display_questions.php');
         }
-
         break;
     }
-
-    case 'logout': {
+    */
+    case 'Sign Out': {
         session_destroy();
         $_SESSION = array();
 
@@ -210,12 +208,12 @@ switch ($action) {
 
         $params = session_get_cookie_params();
 
-        setcookie($name, '', $expire, $params['path'], $params['domain'],
-            $params['secure'], $params['httponly']);
+        setcookie($name, '', $expire, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
 
         header('Location: .');
         break;
     }
+
     default: {
         $error = 'Unknown Action';
         include('error.php');
