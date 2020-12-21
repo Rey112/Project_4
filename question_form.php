@@ -1,4 +1,6 @@
-<?php include('header.php'); ?>
+<?php include('header.php');
+session_start();
+?>
 
     <h1>Ask New Question</h1>
 
