@@ -1,84 +1,102 @@
 <?php
-class AccountDB {
-    private $id, $email, $firstName, $lastName, $phoneNumber, $birthday, $password;
+class Account
+{
+    private $id, $email, $fname, $lname, $phoneNumber, $birthday, $password;
 
-    public function __construct($id, $email, $firstName, $lastName, $phoneNumber, $birthday, $password) {
+    public function __construct($id, $email, $fname, $lname, $phoneNumber, $birthday, $password)
+    {
         $this->id = $id;
         $this->email = $email;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
+        $this->fname = $fname;
+        $this->lname = $lname;
         $this->phoneNumber = $phoneNumber;
         $this->birthday = $birthday;
         $this->password = $password;
     }
 
+    /**
+     * @return mixed
+     */
     public function getId() {
         return $this->id;
     }
 
-    public function setId($value) {
-        $this->id = $value;
+    /**
+     * @param $id
+     */
+    public function setId($id) {
+        $this->id = $id;
     }
 
-    public function getEmail()
-    {
-        return $this->email;
+    /**
+     * @return mixed
+     */
+    public function getFname() {
+        return $this->fname;
     }
 
-    public function setEmail($value)
-    {
-        $this->email = $value;
+    /**
+     * @param $fname
+     */
+    public function setFname($fname) {
+        $this->fname = $fname;
     }
 
-    public function getfirstName()
-    {
-        return $this->firstName;
+    /**
+     * @return mixed
+     */
+    public function getLname() {
+        return $this->lname;
     }
 
-    public function setfirstName($value)
-    {
-        $this->firstName = $value;
+    /**
+     * @param $lname
+     */
+    public function setLname($lname) {
+        $this->lname = $lname;
     }
 
-    public function getlastName()
-    {
-        return $this->lastName;
-    }
-
-    public function setlastName($value)
-    {
-        $this->lastName = $value;
-    }
-
-    public function getPhoneNumber()
-    {
-        return $this->phoneNumber;
-    }
-
-    public function setPhoneNumber($value)
-    {
-        $this->phoneNumber = $value;
-    }
-
-    public function getBirthday()
-    {
+    /**
+     * @return mixed
+     */
+    public function getBirthday() {
         return $this->birthday;
     }
 
-    public function setBirthday($value)
-    {
-        $this->birthday = $value;
+    /**
+     * @param $birthday
+     */
+    public function setBirthday($birthday) {
+        $this->birthday = $birthday;
     }
 
-    public function getPassword()
-    {
+    /**
+     * @return mixed
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+
+    /**
+     * @param $email
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword() {
         return $this->password;
     }
-    
-    public function setPassword($value)
-    {
-        $this->password = $value;
+
+    /**
+     * @param $password
+     */
+    public function setPassword($password) {
+        $this->password = $password;
     }
-
-
 }
+
+?>
