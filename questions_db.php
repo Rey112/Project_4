@@ -3,7 +3,7 @@ class QuestionDB
 {
     public static function get_users_questions($userId)
     {
-        global $db;
+        $db = Database::getDB();
 
         $query = 'SELECT * FROM questions WHERE ownerid = :userId';
         $statement = $db->prepare($query);
@@ -18,7 +18,7 @@ class QuestionDB
 
     public static function get_question($questionId)
     {
-        global $db;
+        $db = Database::getDB();
 
         $query = 'SELECT * FROM questions WHERE id=:questionId';
         $statement = $db->prepare($query);
@@ -32,7 +32,7 @@ class QuestionDB
 
     public static function get_all_questions()
     {
-        global $db;
+        $db = Database::getDB();
 
         $query = 'SELECT * FROM questions';
         $statement = $db->prepare($query);
@@ -46,7 +46,7 @@ class QuestionDB
 
     public static function create_question($title, $body, $skills, $ownerid)
     {
-        global $db;
+        $db = Database::getDB();
 
         $query = 'INSERT INTO questions
                 (title, body, skills, ownerid)
@@ -64,11 +64,11 @@ class QuestionDB
 
     public static function display_edit_question($title, $body, $skills, $questionId)
     {
-        global $db;
+        $db = Database::getDB();
 
         $query = 'UPDATE questions
-              SET title = :title, body = :body, skills = :skills
-              WHERE id = :questionId';
+                  SET title = :title, body = :body, skills = :skills
+                  WHERE id = :questionId';
 
         $statement = $db->prepare($query);
         $statement->bindValue(':title', $title);
@@ -81,7 +81,7 @@ class QuestionDB
 
     public static function edit_question($questionId)
     {
-        global $db;
+        $db = Database::getDB();
         $query = 'SELECT * FROM questions WHERE id = :questionId';
         $statement = $db->prepare($query);
         $statement->bindValue(':questionId', $questionId);
@@ -91,7 +91,7 @@ class QuestionDB
 
     public static function delete_question($questionId)
     {
-        global $db;
+        $db = Database::getDB();
 
         $query = 'DELETE FROM questions WHERE id = :questionId';
         $statement = $db->prepare($query);
@@ -102,7 +102,7 @@ class QuestionDB
 
     public static function newAnswer($title, $body, $skills, $ownerid)
     {
-        global $db;
+        $db = Database::getDB();
         $query = 'INSERT INTO answers
                   (title, body, skills, ownerid)
                   VALUES
@@ -118,7 +118,7 @@ class QuestionDB
 
     public static function getAnswer()
     {
-        global $db;
+        $db = Database::getDB();
         $query = 'SELECT * FROM answers';
         $statement = $db->prepare($query);
         $statement->execute();
@@ -130,3 +130,4 @@ class QuestionDB
 }
 
 ?>
+
