@@ -12,43 +12,60 @@ class question {
     /**
      * @return mixed
      */
-    public function gettitle() {
+    public function getTitle() {
         return $this->title;
     }
 
     /**
      * @param mixed $title
      */
-    public function settitle($value) {
-        $this->title = $value;
+    public function setTitle($title) {
+        $this->title = $title;
     }
 
     /**
      * @return mixed
      */
-    public function getbody() {
+    public function getBody() {
         return $this->body;
     }
 
     /**
      * @param mixed $body
      */
-    public function setbody($value) {
-        $this->body = $value;
+    public function setBody($body) {
+        $this->body = $body;
     }
 
     /**
      * @return mixed
      */
-    public function getskills() {
+    public function getSkills() {
         return $this->skills;
     }
 
     /**
      * @param mixed $skills
      */
-    public function setskills($value) {
-        $this->skills = $value;
+    public function setSkills($skills) {
+        $this->skills = $skills;
+    }
+   
+   /**
+     * @return mixed
+     */
+    public function getQuestionId() {
+        return $this->questionId;
+    }
+
+    /**
+     * @param $questionId
+     */
+    public function setQuestionId($questionId) {
+        $this->questionId = $questionId;
     }
 
 }
+
+
+
