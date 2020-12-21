@@ -1,4 +1,7 @@
-<?php include('header.php')?>
+<?php
+session_start();
+include('header.php')
+?>
 
 <head>
     <title>Display Users Questions</title>
@@ -48,5 +51,6 @@
     </form>
 
 <?php include('footer.php')?>
+
 
 
