@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php
+include('header.php');
+session_start();
+?>
 <table>
     <a href=".?action=display_edit_question&userId=<?php echo $userId; ?>&listType=mine">Display Users Question</a>
     <tr>
