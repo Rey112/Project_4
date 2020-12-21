@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -19,7 +21,7 @@
 
         <br><br>
         <h1>Go To:</h1>
-        <div style="text-align: center"><input type="submit" value="Submit"></div>
+        <div style="text-align: center"><input class="btn btn-success" type="submit" value="Submit"></div>
         <br><br>
         <div style="text-align: center"><a href="registration.php">Register</a></div>
         <br>
