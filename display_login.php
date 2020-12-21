@@ -1,7 +1,8 @@
 <?php
+    session_start();
+    require('database.php'); ?>
 
-    require('database.php');
-
+<?php
     $email = filter_input(INPUT_POST, 'email');
     $password = filter_input(INPUT_POST, 'password');
 
@@ -62,6 +63,9 @@
     <div style="text-align: center"><a href="question_form.php">Click Next to go to Questions</a></div>
 </body>
 </html>
+
+
+
 
 
 
